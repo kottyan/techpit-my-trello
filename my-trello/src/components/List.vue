@@ -4,15 +4,23 @@
       <p class="list-title">{{ title }}</p>
       <div class="deletelist" @click="removeList">×</div>
     </div>
+    <Card v-for="(item, index) in cards"
+          :body="item.body"
+          :key="item.id"
+          :cardIndex="index"
+          :listIndex="listIndex"
+    />
     <CardAdd :listIndex="listIndex" />
   </div>
 </template>
 <script>
 import CardAdd from './CardAdd'
+import Card from './Card'
 
 export default {
   components: {
-    CardAdd
+    CardAdd,
+    Card
   },
   props: {
     title: {
@@ -22,7 +30,11 @@ export default {
     listIndex: {
       type: Number,
       required: true
-    }
+    },
+    cards: {
+      type: Array,
+      required: true
+    },
   },
   methods: {
     removeList: function() {
