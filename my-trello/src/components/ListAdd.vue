@@ -8,8 +8,8 @@
            @focusout="finishEditing"
     >
     <button type="submit"
-      class="add-button"
-      v-if="isEditing || titleExists">
+            class="add-button"
+            v-if="isEditing || titleExists">
       Add
     </button>
   </form>
