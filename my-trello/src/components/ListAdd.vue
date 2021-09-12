@@ -42,10 +42,10 @@ export default {
       this.$store.dispatch('addlist', { title: this.title })
       this.title = ''
     },
-    startEditing() {
+    startEditing: function() {
       this.isEditing = true
     },
-    finishEditing() {
+    finishEditing: function() {
       this.isEditing = false
     },
   }
